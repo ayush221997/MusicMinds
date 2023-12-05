@@ -4,19 +4,19 @@ select * from employee
 order by levels desc
 limit 1;
 
-/*Q2: Which country have the most invoices?*/
+/*Q2: Which country has the most invoices?*/
 select * from invoice
 select billing_country, count(*) as no_of_invoices from invoice
 group by billing_country 
 order by no_of_invoices desc
 limit 1;
 
-/* Q3: What are top 3 values of total invoice? */
+/* Q3: What are the top 3 values of the total invoice? */
  SELECT total 
 FROM invoice
 ORDER BY total DESC;
 
-/* Q4: Which city has the best customers? We would like to throw a promotional Music Festival in the city we made the most money. 
+/* Q4: Which city has the best customers? We want to throw a promotional Music Festival in the city where we make the most money. 
 Write a query that returns one city that has the highest sum of invoice totals. 
 Return both the city name & sum of all invoice totals*/
 
@@ -27,7 +27,7 @@ ORDER BY invoice_total DESC
 LIMIT 1;
 
 /* Q5: Who is the best customer? The customer who has spent the most money will be declared the best customer. 
-Write a query that returns the person who has spent the most money.*/
+Could you write a query that returns the person who has spent the most money? */
 
 SELECT customer.customer_id, first_name, last_name, SUM(total) AS total_spending
 FROM customer
@@ -36,7 +36,7 @@ GROUP BY customer.customer_id
 ORDER BY total_spending DESC
 LIMIT 1;
 
-/* Q6: Write query to return the email, first name, last name, & Genre of all Rock Music listeners. 
+/* Q6: Write a query to return the email, first name, last name, and genre of all Rock Music listeners. 
 Return your list ordered alphabetically by email starting with A. */
 
 SELECT DISTINCT email AS Email,first_name AS First_Name, last_name AS Last_Name, genre.name AS Name
